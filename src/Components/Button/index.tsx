@@ -16,17 +16,10 @@ isPlaying?audio.play():audio.pause()
 },[isPlaying])
 
 
-function playMusic(){
-   
-    setIsPlaying(true)
+function changePlay(){
+    isPlaying? setIsPlaying(false) : setIsPlaying(true)
 }
 
-function pauseMusic(){
-    console.log('pause')
-    setIsPlaying(false)
-
-   
-}
 
 
 
@@ -37,7 +30,7 @@ function pauseMusic(){
                 <KeyboardArrowLeftRounded fontSize='large'/>
             </div>
             <div className={`${styles.button} ${styles.playButton}`}>
-                {!isPlaying?<div  onClick={playMusic}><PlayArrow fontSize='large'/></div>:<div onClick={pauseMusic}><Pause/></div>}
+                {!isPlaying?<div  onClick={()=>{changePlay()}}><PlayArrow fontSize='large'/></div>:<div onClick={()=>{changePlay()}}><Pause/></div>}
             </div>
 
             <div className={styles.button}>
